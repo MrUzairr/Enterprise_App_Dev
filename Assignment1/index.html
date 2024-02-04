@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fibonacci Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Fibonacci Calculator</h1>
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput" />
+    <button id="fibonacci">Calculate Fibonacci</button>
+    <button id="bgColor">Toggle Color</button>
+    <p id="result">Result will appear here.</p>
+  </div>
+  <script>
+    const worker = new Worker('worker.js');
+
+      const bgColor = document.querySelector('#bgColor');
+      const fibonacci = document.querySelector('#fibonacci');
+
+      const number = document.getElementById('numberInput');
+      fibonacci.addEventListener('click',(event)=>{
+        if(event){
+          worker.postMessage(number.value);
+        }
+      })
+      worker.onmessage = function (event) {
+        alert(event.data)
+        // document.getElementById("result").innerHTML = `Fibonacci: ${data}`;
+      };
+      bgColor.addEventListener('click', (event) => {
+        if (document.body.style.backgroundColor !== 'lightblue') {
+          document.body.style.backgroundColor = 'lightblue';
+        }
+        else {
+          document.body.style.backgroundColor = '#f4f4f4';
+        }
+      });
+      
+  </script>
+</body>
+
+</html>
