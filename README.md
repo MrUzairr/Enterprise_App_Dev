@@ -14,4 +14,4 @@ The "Weather Application" is a simple web application that allows users to retri
    ```sh
    git clone https://github.com/MrUzairr/Enterprise_App_Dev.git
 
-![Snippet's](https://drive.google.com/file/d/1cDRrf8aivOKrqUXA5ul_qAbRk0eCf0Gj/view?usp=drive_link)
+![Snippets](https://drive.google.com/file/d/1cDRrf8aivOKrqUXA5ul_qAbRk0eCf0Gj/view?usp=drive_link)
